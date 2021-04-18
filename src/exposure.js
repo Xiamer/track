@@ -12,7 +12,7 @@ import 'intersection-observer'
 // 节流时间调整，默认100ms
 IntersectionObserver.prototype['THROTTLE_TIMEOUT'] = 300
 
-export default class Exposure {
+export class Exposure {
   constructor(option = {}) {
     this._observer = null
 

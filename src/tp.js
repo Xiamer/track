@@ -25,7 +25,7 @@
   * @example
   * new TP({trackCb: fn})
 */
-export default class TP {
+export class TP {
   constructor(option) {
     // 计算页面显示时的时间戳
     this.entry_time = [];

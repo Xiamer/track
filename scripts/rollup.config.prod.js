@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2021-04-08 16:44:31
- * @LastEditTime: 2021-04-18 18:09:25
+ * @LastEditTime: 2021-04-18 23:01:39
  */
 import filesize from 'rollup-plugin-filesize';
 import {uglify} from 'rollup-plugin-uglify';
@@ -32,7 +32,7 @@ export default [
       // },
       // cjs and esm version
       {
-        file: `dist/${name}.esm.js`,
+        file: `dist/${name}.es.js`,
         format: 'es',
         banner
       }

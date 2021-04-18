@@ -2,9 +2,10 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2021-04-14 09:54:26
- * @LastEditTime: 2021-04-18 16:54:29
+ * @LastEditTime: 2021-04-18 23:02:30
  */
-export default class Click {
+
+export class Click {
   constructor(option = {}) {
     this.trackCb = option && option.trackCb ? option.trackCb : function () { };
   }
