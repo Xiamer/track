@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2021-04-08 16:44:31
- * @LastEditTime: 2021-04-18 17:30:27
+ * @LastEditTime: 2021-04-18 18:09:25
  */
 import filesize from 'rollup-plugin-filesize';
 import {uglify} from 'rollup-plugin-uglify';
@@ -37,7 +37,18 @@ export default [
         banner
       }
     ],
-    plugins: [...baseConfig.plugins, filesize()]
+    plugins: [
+      ...baseConfig.plugins,
+      uglify(
+        {
+          compress: {
+            drop_console: true
+          }
+        },
+        minify
+      ),
+      filesize()
+    ]
   },
   // .min.js
   {

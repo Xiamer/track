@@ -1,9 +1,9 @@
 {
   "name": "x-track",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "web track",
-  "main": "dist/track.min.js",
-  "module": "dist/track.esm.js",
+  "main": "dist/x-track.min.js",
+  "module": "dist/x-track.esm.js",
   "keywords": [
     "埋点",
     "停留时间",
