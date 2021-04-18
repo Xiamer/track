@@ -1,0 +1,83 @@
+<!--
+ * @Author: xiaoguang_10@qq.com
+ * @LastEditors: xiaoguang_10@qq.com
+ * @Date: 2021-04-08 16:47:31
+ * @LastEditTime: 2021-04-14 14:23:20
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>track </title>
+  <link rel="stylesheet" href="./index.css">
+  <style>
+    .item {
+      width: 48%;
+      margin-bottom: 20px;
+      justify-content: space-between;
+      height: 200px;
+      background: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div style="height: 400px;">
+      占位400px {{m}}
+    </div>
+    <div class="flex flex-wrap flex-between">
+      <div class="item" v-exposure v-for="item in list" :key="item.id" :exposure-id="item.id" :exposure-data="JSON.stringify(item)">
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="../dist/x-track.js"></script>
+  <script>
+    let { TP, Exposure } = track
+    // 曝光埋点
+    let exposure = new Exposure({
+      trackCb: (val) => {
+        console.log('exposure track', val)
+      }
+    })
+
+    const addListenner = (ele, binding) => {
+      exposure.add(ele);
+    };
+    const removeListener = (ele) => {
+      exposure.remove(ele);
+    };
+
+    Vue.directive('exposure', {
+      bind: addListenner,
+      unbind: removeListener,
+    });
+
+    new Vue({
+      el: "#app",
+      data: {
+        m: "hello vue.js",
+        list: [
+          { id: 0, name: '0-name', desc: '0-desc' },
+          { id: 1, name: '1-name', desc: '1-desc' },
+          { id: 2, name: '2-name', desc: '2-desc' },
+          { id: 3, name: '3-name', desc: '3-desc' },
+          { id: 4, name: '4-name', desc: '4-desc' },
+          { id: 5, name: '5-name', desc: '5-desc' },
+          { id: 6, name: '6-name', desc: '6-desc' },
+          { id: 7, name: '7-name', desc: '7-desc' },
+          { id: 8, name: '8-name', desc: '8-desc' },
+          { id: 9, name: '9-name', desc: '9-desc' },
+        ]
+      },
+    });
+
+  </script>
+
+</body>
+
+</html>

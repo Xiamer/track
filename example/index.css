@@ -1,0 +1,347 @@
+/* 通用背景色 */
+.bg-white {
+  background-color: white;
+}
+.bg-yellow {
+  background-color: yellow;
+}
+.bg-blue {
+  background-color: blue;
+}
+.bg-green {
+  background-color: green;
+}
+.bg-red {
+  background-color: red;
+}
+.bg-black {
+  background-color: black;
+}
+/* 占位图 */
+.bg-image {
+  background-color: #E1E3E8;
+}
+.bg-text {
+  background-color: #F5F7FA;
+}
+
+
+/* 通用字体色 */
+.color-white {
+  color: white;
+}
+.color-yellow {
+  color: yellow;
+}
+.color-blue {
+  color: blue;
+}
+.color-green {
+  color: green;
+}
+.color-red {
+  color: red;
+}
+.color-black {
+  color: black;
+}
+
+/* display */
+.dspl-inbl, .inbl {
+  display: inline-block;
+}
+.dspl-bl {
+  display: block;
+}
+.dspl-flex {
+  display: flex;
+}
+.dspl-none {
+  display: none;
+}
+
+/* 光标类型 */
+.cs-def {
+  cursor: default;
+}
+.cs-pt {
+  cursor: pointer;
+}
+.cs-wait {
+  cursor: wait;
+}
+
+/* 最大宽、高 */
+.maxwp-100 {
+  max-width: 100%;
+}
+.maxhp-100 {
+  max-height: 100%;
+}
+.minwvw-100 {
+  min-width: 100vw;
+}
+.minhvh-100 {
+  min-height: 100vh;
+}
+/* w/h 100 */
+.wvw-100 {
+  width: 100vw;
+}
+.hvh-100 {
+  height: 100vh;
+}
+
+/* 旋转 */
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.rotate-270 {
+  transform: rotate(270deg);
+}
+
+/* magin - x auto */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 多行省略 1 ~ 5 */
+.te {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  white-space: initial;
+}
+.te-1 {
+  -webkit-line-clamp: 1;
+}
+.te-2 {
+  -webkit-line-clamp: 2;
+}
+.te-3 {
+  -webkit-line-clamp: 3;
+}
+.te-4 {
+  -webkit-line-clamp: 4;
+}
+.te-5 {
+  -webkit-line-clamp: 5;
+}
+
+
+/* 定位 position */
+.pst-rlt {
+  position: relative;
+}
+.pst-absl {
+  position: absolute;
+}
+.pst-absl-i {
+  position: absolute !important;
+}
+.pst-fix {
+  position: fixed;
+}
+
+/* 固定定位 */
+.fix-h {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fix-v {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fix-vh {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* flex 相关 */
+.flex {
+  display: flex;
+}
+.flex-coloum {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-around {
+  justify-content: space-around;
+}
+.flex-center {
+  justify-content: center;
+}
+.flex-middle {
+  align-items: center;
+}
+.flex-right {
+  justify-content: flex-end;
+}
+.flex-between {
+  justify-content: space-between;
+}
+.flex-end {
+  align-items: flex-end;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+
+/* 通用水平垂直居中 */
+.vh-parent {
+  position: relative;
+}
+.v {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.h {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.vh {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* overflow */
+.ovfl-hd {
+  overflow: hidden;
+}
+.ovfl-scroll {
+  overflow: scroll;
+}
+.ovfl-vsb {
+  overflow: visible;
+}
+.ovfl-x-hd {
+  overflow-x: hidden;
+}
+.ovfl-x-scroll {
+  overflow-x: scroll;
+}
+.ovfl-y-hd {
+  overflow-y: hidden;
+}
+.ovfl-y-scroll {
+  overflow-y: scroll;
+}
+
+/* 浮动 */
+.fl-l {
+  float: left;
+}
+.fl-r {
+  float: right;
+}
+.cfl::after {
+  content: '';
+  display: block;
+  clear: both;
+};
+
+/* 清除浮动 */
+.cl-b {
+  clear: both;
+}
+.cl-l {
+  clear: left;
+}
+.cl-r {
+  clear: right;
+}
+
+/* box-sizing */
+.bs-bd {
+  box-sizing: border-box;
+
+}
+.bs-ct {
+  box-sizing: content-box;
+}
+
+.vtal-top {
+  vertical-align: top;
+}
+.vtal-md {
+  vertical-align: middle;
+}
+.vtal-bt {
+  vertical-align: bottom;
+}
+
+/* text-align */
+.t-c {
+  text-align: center;
+}
+.t-l {
+  text-align: left;
+}
+.t-r {
+  text-align: right;
+}
+
+/* 线排列方式 */
+.td-none {
+  text-decoration: none;
+}
+.td-lth {
+  text-decoration: line-through;
+}
+
+
+/* 水平滑动 */
+.scroll-h {
+  overflow-x: scroll;
+  width: 100%;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 折行 */
+.word-wrap {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* 加粗字体 */
+.fw-bold {
+  font-weight:bold;
+}
+
+/* 入场动画 */
+.fadein-init {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.fadein {
+  opacity: 1;
+}
