@@ -32,7 +32,7 @@ $ npm install x-track --save
 ## 常规用法
 
 ```js
-import { Click, TP, Exposure } from "v-track"
+import { Click, TP, Exposure } from "x-track"
 
 // 点击埋点
 let click = new Click({

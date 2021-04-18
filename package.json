@@ -1,6 +1,6 @@
 {
   "name": "x-track",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "web track",
   "main": "dist/track.min.js",
   "module": "dist/track.esm.js",
