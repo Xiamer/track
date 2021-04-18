@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2021-04-08 16:47:31
- * @LastEditTime: 2021-04-14 14:23:20
+ * @LastEditTime: 2021-04-18 16:54:56
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -30,33 +30,58 @@
       占位400px {{m}}
     </div>
     <div class="flex flex-wrap flex-between">
-      <div class="item" v-exposure v-for="item in list" :key="item.id" :exposure-id="item.id" :exposure-data="JSON.stringify(item)">
+      <div class="item" v-click v-exposure v-for="item in list" :key="item.id" :exposure-id="item.id" :exposure-data="JSON.stringify(item)" :click-data="JSON.stringify(item)">
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <script src="../dist/x-track.js"></script>
+  <script src="../dist/x-track.min.js"></script>
   <script>
-    let { TP, Exposure } = track
+    let { TP, Exposure, Click } = window['x-track']
+
+    // 停留时长
+    let tp = new TP({
+      trackCb: (oTime) => {
+        localStorage.setItem('x', JSON.stringify(oTime))
+        // httpAjaxGet('http://www.baidu.com', oTime)
+      }
+    })
+    // 点击埋点
+    let click = new Click({
+      trackCb: (val) => {
+        console.log('click track', val)
+      }
+    })
+
+    const addClickListenner = (ele, binding) => {
+      click.add(ele);
+    };
+    const removeClickListener = (ele, binding) => {
+      click.remove(ele);
+    };
+
+    Vue.directive('click', {
+      bind: addClickListenner,
+      unbind: removeClickListener,
+    });
+
+
     // 曝光埋点
     let exposure = new Exposure({
       trackCb: (val) => {
         console.log('exposure track', val)
       }
     })
-
     const addListenner = (ele, binding) => {
       exposure.add(ele);
     };
     const removeListener = (ele) => {
       exposure.remove(ele);
     };
-
     Vue.directive('exposure', {
       bind: addListenner,
       unbind: removeListener,
     });
-
     new Vue({
       el: "#app",
       data: {
@@ -75,6 +100,7 @@
         ]
       },
     });
+
 
   </script>
 

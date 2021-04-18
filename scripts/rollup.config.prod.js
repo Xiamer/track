@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2021-04-08 16:44:31
- * @LastEditTime: 2021-04-14 14:02:21
+ * @LastEditTime: 2021-04-18 16:43:05
  */
 import filesize from 'rollup-plugin-filesize';
 import {uglify} from 'rollup-plugin-uglify';
@@ -24,14 +24,6 @@ export default [
   {
     ...baseConfig,
     output: [
-      // umd development version with sourcemap
-      {
-        file: `dist/${name}.js`,
-        format: 'umd',
-        name,
-        banner,
-        sourcemap: true
-      },
       // // cjs and esm version
       // {
       //   file: `dist/${name}.cjs.js`,
@@ -45,7 +37,18 @@ export default [
         banner
       }
     ],
-    plugins: [...baseConfig.plugins, filesize()]
+    plugins: [
+      ...baseConfig.plugins,
+      uglify(
+        {
+          compress: {
+            drop_console: true
+          }
+        },
+        minify
+      ),
+      filesize()
+    ]
   },
   // .min.js
   {

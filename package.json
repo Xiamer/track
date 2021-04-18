@@ -1,10 +1,9 @@
 {
   "name": "x-track",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "web track",
-  "main": "dist/track.js",
+  "main": "dist/track.min.js",
   "module": "dist/track.esm.js",
-  "unpkg": "dist/track.min.js",
   "keywords": [
     "埋点",
     "停留时间",
@@ -16,9 +15,10 @@
     "exposure",
     "time on page"
   ],
-  "scripts": {
+"scripts": {
     "start": "cross-env NODE_ENV=development rollup -w -c scripts/rollup.config.dev.js",
-    "build": "cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js"
+    "build": "npm run clean && cross-env NODE_ENV=production rollup -c scripts/rollup.config.prod.js",
+    "clean": "node scripts/clean.js"
   },
   "repository": {
     "type": "git",

@@ -2,7 +2,7 @@
  * @Author: xiaoguang_10@qq.com
  * @LastEditors: xiaoguang_10@qq.com
  * @Date: 2021-04-14 09:54:26
- * @LastEditTime: 2021-04-14 10:16:32
+ * @LastEditTime: 2021-04-18 16:54:29
  */
 export default class Click {
   constructor(option = {}) {
@@ -25,7 +25,15 @@ export default class Click {
       this.track(trackData)
     })
   }
-
+  /**
+   * 移除
+   * @param {Element} el 
+   */
+  remove(el) {
+    el.removeEventListener('click', () => {
+      this.track(trackData)
+    })
+  }
   /**
    * 埋点上报
    */

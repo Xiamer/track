@@ -60,7 +60,6 @@ let exposure = new Exposure({
 })
 
 ```
-
 ## VUE用法
 
 参考 `/example/vue.html`
