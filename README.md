@@ -63,3 +63,10 @@ let exposure = new Exposure({
 ## VUE用法
 
 参考 `/example/vue.html`
+
+
+
+## 优化参考文章（未完成）
+
+* [字节-无埋点系统](https://mp.weixin.qq.com/s/TcaOUBMBBEGQoQPAjYXb_Q)
+* [政采云-无埋点系统](https://mp.weixin.qq.com/s/I-ttIv13UDSeKMIKyXqGQA)
